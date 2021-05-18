@@ -1,0 +1,16 @@
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.exe
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.deps.json
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.runtimeconfig.json
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.runtimeconfig.dev.json
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.dll
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\ref\helloworld.dll
+C:\learning\PSWebAPP\helloworld\bin\Debug\net5.0\helloworld.pdb
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.csprojAssemblyReference.cache
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.GeneratedMSBuildEditorConfig.editorconfig
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.AssemblyInfoInputs.cache
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.AssemblyInfo.cs
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.csproj.CoreCompileInputs.cache
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.dll
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\ref\helloworld.dll
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.pdb
+C:\learning\PSWebAPP\helloworld\obj\Debug\net5.0\helloworld.genruntimeconfig.cache
