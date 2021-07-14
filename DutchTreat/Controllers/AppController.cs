@@ -17,7 +17,6 @@ namespace DutchTreat.Controllers
         [HttpGet("contact")]
         public IActionResult Contact()
         {
-
             return View();
         }
         [HttpPost("contact")]
