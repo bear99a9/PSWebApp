@@ -24,7 +24,7 @@ namespace DutchTreat.Controllers
         {
             if(ModelState.IsValid)
             {
-
+                _mailService.SendMail("seantrevoredwards@gmail.com", model.Subject, $"From {model.Name} - {model.Email}, Message: {model.Message}")
             }
             else
             {
