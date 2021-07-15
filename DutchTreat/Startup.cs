@@ -1,5 +1,6 @@
 namespace DutchTreat
 {
+    using DutchTreat.Services;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ namespace DutchTreat
                 .AddRazorRuntimeCompilation();
 
             services.AddRazorPages();
+            services.AddTransient<IMailService, NullMailService>();
         }
 
        
