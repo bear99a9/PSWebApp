@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -18,9 +20,18 @@ namespace DutchTreat
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration(AddConfiguration)
             .ConfigureWebHostDefaults(webBuilder =>
             {
               webBuilder.UseStartup<Startup>();
             });
-  }
+
+        private static void AddConfiguration(HostBuilderContext context, IConfigurationBuilder builder)
+        {
+            builder.Sources.Clear();
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
+        }
+    }
 }
