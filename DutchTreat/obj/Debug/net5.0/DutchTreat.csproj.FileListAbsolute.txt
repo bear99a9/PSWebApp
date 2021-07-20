@@ -386,3 +386,4 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\runtimes\win-x86\native\Microso
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\config.json
+C:\learning\PSWebAPP\DutchTreat\obj\Debug\net5.0\Razor\Views\App\Shop.cshtml.g.cs
