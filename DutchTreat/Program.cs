@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using DutchTreat.Data;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DutchTreat
 {
@@ -15,18 +18,38 @@ namespace DutchTreat
   {
     public static void Main(string[] args)
     {
-      CreateHostBuilder(args).Build().Run();
-    }
+            var host = CreateHostBuilder(args);
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration(AddConfiguration)
-            .ConfigureWebHostDefaults(webBuilder =>
+            if (args.Length == 1 && args[0].ToLower() == "/seed")
             {
-              webBuilder.UseStartup<Startup>();
-            });
+                RunSeeding(host);
+            }
+            else
+            {
+                host.Run();
+            }
 
-        private static void AddConfiguration(HostBuilderContext context, IConfigurationBuilder builder)
+        }
+
+        private static void RunSeeding(IWebHost host)
+        {
+            var scopeFactory = host.Services.GetService<IServiceScopeFactory>();
+
+            using (var scope = scopeFactory.CreateScope())
+            {
+                var seeder = scope.ServiceProvider.GetService<DutchSeeder>();
+                seeder.Seed();
+
+            }
+        }
+
+        public static IWebHost CreateHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(SetupConfiguration)
+            .UseStartup<Startup>()
+            .Build();
+
+        private static void SetupConfiguration(WebHostBuilderContext context, IConfigurationBuilder builder)
         {
             builder.Sources.Clear();
             builder.SetBasePath(Directory.GetCurrentDirectory())
