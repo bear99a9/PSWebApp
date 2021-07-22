@@ -21,6 +21,7 @@ namespace DutchTreat
             services.AddRazorPages();
             services.AddTransient<IMailService, NullMailService>();
             services.AddTransient<DutchSeeder>();
+            services.AddScoped<IDutchRepository, DutchRepository>();
         }
 
        
