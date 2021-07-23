@@ -1,4 +1,5 @@
 ﻿using DutchTreat.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,37 @@ namespace DutchTreat.Data
         {
             _dutchContext = dutchContext;
             _logger = logger;
+        }
+
+        public Order GetOrderById(int id)
+        {
+            try
+            {
+                return _dutchContext.Order.Include(o => o.Items)
+                    .ThenInclude(i => i.Product)
+                    .Where(o => o.Id == id)
+                    .FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to get all products: {ex}");
+                return null;
+            }
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            try
+            {
+                return _dutchContext.Order.Include(o => o.Items)
+                    .ThenInclude(i => i.Product)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to get all products: {ex}");
+                return null;
+            }
         }
 
         public IEnumerable<Product> GetAllProducts()

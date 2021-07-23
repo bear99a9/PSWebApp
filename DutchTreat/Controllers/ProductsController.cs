@@ -22,6 +22,7 @@ namespace DutchTreat.Controllers
             _repository = repository;
             _logger = logger;
         }
+
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]

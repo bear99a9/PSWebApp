@@ -16,7 +16,8 @@ namespace DutchTreat
             services.AddDbContext<DutchContext>();
 
             services.AddControllersWithViews()
-                .AddRazorRuntimeCompilation();
+                .AddRazorRuntimeCompilation()
+                .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddRazorPages();
             services.AddTransient<IMailService, NullMailService>();
