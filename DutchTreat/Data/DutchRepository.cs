@@ -81,5 +81,10 @@ namespace DutchTreat.Data
         {
             return _dutchContext.SaveChanges() > 0;
         }
+
+        public void AddEntity(object model)
+        {
+            _dutchContext.Add(model);
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace DutchTreat.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogInformation($"Failed to get orders: {ex}");
+                _logger.LogError($"Failed to get orders: {ex}");
                 return BadRequest("Failed to get orders");
             }
         }
@@ -62,10 +62,32 @@ namespace DutchTreat.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogInformation($"Failed to get orders: {ex}");
+                _logger.LogError($"Failed to get orders: {ex}");
                 return BadRequest("Failed to get orders");
             }
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody]Order model)
+        {
+            try
+            {
+                _repository.AddEntity(model);
+
+                if (_repository.SaveAll())
+                {
+                    return Created($"/api/orders/{model.Id}", model);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to save new order: {ex}");
+            }
+
+            return BadRequest("Failed to save new order");
+
+        }
     }
+
+    
 }
