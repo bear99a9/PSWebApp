@@ -15,13 +15,27 @@ namespace DutchTreat
     public class Startup
     {
 
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<StoreUser, IdentityRole>(cfg =>
             {
                 cfg.User.RequireUniqueEmail = true;
             })
-            .AddEntityFrameworkStores<DutchContext>();
+              .AddEntityFrameworkStores<DutchContext>();
+
+            //services.AddAuthentication()
+            //  .AddCookie()
+            //  .AddJwtBearer(cfg =>
+            //  {
+            //      cfg.TokenValidationParameters = new TokenValidationParameters()
+            //      {
+            //          ValidIssuer = _config["Tokens:Issuer"],
+            //          ValidAudience = _config["Tokens:Audience"],
+            //          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]))
+            //      };
+            //  });
 
             services.AddDbContext<DutchContext>();
 
@@ -29,10 +43,14 @@ namespace DutchTreat
 
             services.AddTransient<DutchSeeder>();
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddScoped<IDutchRepository, DutchRepository>();
 
-            services.AddControllersWithViews()
-              .AddRazorRuntimeCompilation();
+            //services.AddControllersWithViews()
+            //  .AddRazorRuntimeCompilation()
+            //  .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
             services.AddRazorPages();
         }
 
