@@ -16,45 +16,45 @@ namespace DutchTreat
 {
   public class Program
   {
-    public static void Main(string[] args)
-    {
-            var host = CreateHostBuilder(args);
+        public static void Main(string[] args)
+        {
+            var host = CreateHostBuilder(args).Build();
 
-            if (args.Length == 1 && args[0].ToLower() == "/seed")
+            if (args.Length > 0 && args[0].ToLower() == "/seed")
             {
                 RunSeeding(host);
-            }
-            else
-            {
-                host.Run();
+                return;
             }
 
+            host.Run();
         }
 
-        private static void RunSeeding(IWebHost host)
+        private static void RunSeeding(IHost host)
         {
             var scopeFactory = host.Services.GetService<IServiceScopeFactory>();
-
             using (var scope = scopeFactory.CreateScope())
             {
                 var seeder = scope.ServiceProvider.GetService<DutchSeeder>();
                 seeder.Seed();
-
             }
         }
 
-        public static IWebHost CreateHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration(SetupConfiguration)
-            .UseStartup<Startup>()
-            .Build();
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
 
-        private static void SetupConfiguration(WebHostBuilderContext context, IConfigurationBuilder builder)
+        private static void SetupConfiguration(HostBuilderContext ctx, IConfigurationBuilder builder)
         {
+            // Removing the default configuration options
             builder.Sources.Clear();
-            builder.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("config.json")
-                .AddEnvironmentVariables();
+
+            builder.AddJsonFile("config.json", false, true)
+                   .AddEnvironmentVariables();
+
         }
     }
 }

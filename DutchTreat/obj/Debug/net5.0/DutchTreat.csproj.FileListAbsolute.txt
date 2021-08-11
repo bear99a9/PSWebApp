@@ -52,8 +52,6 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Compo
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
-C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -138,8 +136,6 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.FileS
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
-C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
-C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
@@ -393,3 +389,8 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Newton
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\AutoMapper.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll

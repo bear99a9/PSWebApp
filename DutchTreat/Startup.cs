@@ -12,23 +12,23 @@ namespace DutchTreat
 
     public class Startup
     {
-    
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DutchContext>();
 
-            services.AddControllersWithViews()
-                .AddRazorRuntimeCompilation()
-                .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddRazorPages();
             services.AddTransient<IMailService, NullMailService>();
+
             services.AddTransient<DutchSeeder>();
+
             services.AddScoped<IDutchRepository, DutchRepository>();
+
+            services.AddControllersWithViews()
+              .AddRazorRuntimeCompilation();
+            services.AddRazorPages();
         }
 
-       
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -37,6 +37,7 @@ namespace DutchTreat
             }
             else
             {
+                // Add Error Page
                 app.UseExceptionHandler("/error");
             }
 
@@ -45,11 +46,13 @@ namespace DutchTreat
             app.UseRouting();
 
             app.UseEndpoints(cfg =>
-           {
-               cfg.MapRazorPages();
+            {
+                cfg.MapControllerRoute("Fallback",
+                  "{controller}/{action}/{id?}",
+                  new { controller = "App", action = "Index" });
 
-               cfg.MapControllerRoute("Default", "/{controller}/{action}/{id?}", new { controller = "App", action = "Index" });
-           });
+                cfg.MapRazorPages();
+            });
         }
     }
 }
