@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Nu1k5PatJURy194nXJn0ZOZIP//G26xRsYdh99AINdDHJHkaW3ULz9JZjsridH18+EgDKTUsxxDPBa+mFiv7uw==",
+  "dgSpecHash": "2NJl2pmTCkKekisMOMQ/hM/tCf23vBdWeSE3md0OlBQ2x4Ymj5FUY8P0P4I0Jq5lVGObpW2ZBw4c4Yj9PaofaQ==",
   "success": true,
   "projectFilePath": "C:\\learning\\PSWebAPP\\DutchTreat\\DutchTreat.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.9\\microsoft.entityframeworkcore.design.5.0.9.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.9\\microsoft.entityframeworkcore.relational.5.0.9.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.9\\microsoft.entityframeworkcore.sqlserver.5.0.9.nupkg.sha512",
+    "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.9\\microsoft.entityframeworkcore.tools.5.0.9.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
