@@ -394,3 +394,4 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptograp
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\learning\PSWebAPP\DutchTreat\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
