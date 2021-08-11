@@ -9,12 +9,20 @@ namespace DutchTreat
     using Microsoft.Extensions.Hosting;
     using AutoMapper;
     using System.Reflection;
+    using DutchTreat.Data.Entities;
+    using Microsoft.AspNetCore.Identity;
 
     public class Startup
     {
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<StoreUser, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+            .AddEntityFrameworkStores<DutchContext>();
+
             services.AddDbContext<DutchContext>();
 
             services.AddTransient<IMailService, NullMailService>();

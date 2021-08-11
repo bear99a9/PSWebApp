@@ -1,54 +1,77 @@
-﻿using DutchTreat.Data.Entities;
-using Microsoft.AspNetCore.Hosting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using DutchTreat.Data.Entities;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 
 namespace DutchTreat.Data
 {
     public class DutchSeeder
     {
         private readonly DutchContext _ctx;
-        private readonly IWebHostEnvironment _env;
+        private readonly IWebHostEnvironment _hosting;
+        private readonly UserManager<StoreUser> _userManager;
 
-        public DutchSeeder(DutchContext ctx, IWebHostEnvironment env)
+        public DutchSeeder(DutchContext ctx,
+          IWebHostEnvironment hosting,
+          UserManager<StoreUser> userManager)
         {
             _ctx = ctx;
-            _env = env;
+            _hosting = hosting;
+            _userManager = userManager;
         }
 
-        public void Seed()
+        public async Task SeedAsync()
         {
             _ctx.Database.EnsureCreated();
 
-            if (!_ctx.Products.Any())
+            StoreUser user = await _userManager.FindByEmailAsync("sean.edwards@supportingeducation.com");
+
+            if (user == null)
             {
-                // Need to create sample data 
-                var filePath = Path.Combine(_env.ContentRootPath, "Data/art.json");
-                var json = File.ReadAllText(filePath);
-                var products = JsonSerializer.Deserialize<IEnumerable<Product>>(json);
-
-                _ctx.Products.AddRange(products);
-
-                var order = new Order()
+                user = new StoreUser()
                 {
-                    OrderDate = DateTime.Today,
-                    OrderNumber = "1000",
-                    Items = new List<OrderItem>()
-                    {
-                        new OrderItem()
-                        {
-                            Product = products.First(),
-                            Quantity = 5,
-                            UnitPrice = products.First().Price
-                        }
-                    }
+                    FirstName = "Sean",
+                    LastName = "Edwards",
+                    Email = "sean.edwards@supportingeducation.com",
+                    UserName = "sean.edwards@supportingeducation.com"
                 };
 
-                _ctx.Order.Add(order);
+
+            var result = await _userManager.CreateAsync(user, "P@ssw0rd!");
+                if (result != IdentityResult.Success)
+                {
+                    throw new InvalidOperationException("Could not create new user in Seeder");
+                }
+            }
+
+            if (!_ctx.Products.Any())
+            {
+                // Need to create the Sample Data
+                var file = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
+                var json = File.ReadAllText(file);
+                var products = JsonSerializer.Deserialize<IEnumerable<Product>>(json);
+                _ctx.Products.AddRange(products);
+
+                var order = _ctx.Order.Where(o => o.Id == 1).FirstOrDefault();
+                if (order != null)
+                {
+                    order.User = user;
+                    order.Items = new List<OrderItem>()
+          {
+            new OrderItem()
+            {
+              Product = products.First(),
+              Quantity = 5,
+              UnitPrice = products.First().Price
+            }
+          };
+                }
 
                 _ctx.SaveChanges();
             }
