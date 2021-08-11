@@ -7,6 +7,8 @@ namespace DutchTreat
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using AutoMapper;
+    using System.Reflection;
 
     public class Startup
     {
@@ -19,6 +21,7 @@ namespace DutchTreat
                 .AddRazorRuntimeCompilation()
                 .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddRazorPages();
             services.AddTransient<IMailService, NullMailService>();
             services.AddTransient<DutchSeeder>();
