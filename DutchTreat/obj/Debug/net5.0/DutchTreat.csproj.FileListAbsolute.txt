@@ -396,3 +396,4 @@ C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.C
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\learning\PSWebAPP\DutchTreat\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\learning\PSWebAPP\DutchTreat\bin\Debug\net5.0\tsconfig.json
