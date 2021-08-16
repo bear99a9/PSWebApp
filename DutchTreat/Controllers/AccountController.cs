@@ -95,7 +95,7 @@ namespace DutchTreat.Controllers
 
                         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-                        var token = new JwtSecurityToken(_config["Tokens:Issuer"], _config["Tokens:Audience"], claims, signingCredentials: creds, expires: DateTime.UtcNow.AddMinutes(20));
+                        var token = new JwtSecurityToken(_config["Tokens:Issuer"], _config["Tokens:Audience"], claims, signingCredentials: creds, expires: DateTime.UtcNow.AddMinutes(120));
 
                         return Created("", new
                         {
