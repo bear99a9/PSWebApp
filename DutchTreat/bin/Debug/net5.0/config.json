@@ -6,7 +6,13 @@
   "Logging": {
     "LogLevel": {
       "DutchTreat": "Information",
-      "Microsoft":  "Warning"
+      "Microsoft": "Warning"
     }
+  },
+
+  "Tokens": {
+    "Key": ";lsagfhhg;dgrwegfg;dg",
+    "Issuer": "http://localhost:8888",
+    "Audience": "http://localhost:8888"
   }
 }
