@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fwexWhBApIg+QdtdGm5Q5pN7MdrGELTDvss/DsdjjnCPvxuPVZicKrQ7mRv1x510Rhw+zKAK1KWbVxXybQ7KmQ==",
+  "dgSpecHash": "vtK9QzeBa4LF1dAEKq8bPiUS9AMNZzB2cuEM43VKm4HI9d3yYZUYaP9QVWZF4cOCtMb0OX77ADE7cYu6JGjDoA==",
   "success": true,
   "projectFilePath": "C:\\learning\\PSWebAPP\\DutchTreat\\DutchTreat.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.typescript.msbuild\\4.4.2\\microsoft.typescript.msbuild.4.4.2.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\sean.edwards\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",

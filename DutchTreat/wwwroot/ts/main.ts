@@ -1,3 +1,3 @@
-﻿let shopper = new Shopper("Sean", "Edwards");
+﻿const shopper = new Shopper("Sean", "Edwards");
 
 shopper.showName();
