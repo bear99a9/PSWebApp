@@ -63,7 +63,7 @@ namespace DutchTreat.Data
         {
             try
             {
-                return _dutchContext.Products.OrderBy(p => p.Title).ToList();
+                return _dutchContext.Products.OrderBy(p => p.Category).ToList();
             }
             catch (Exception ex)
             {

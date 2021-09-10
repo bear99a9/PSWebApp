@@ -5,19 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { Store } from './services/store.service';
 import ProductListView from './views/productListView.component';
+import { CartView } from './views/cartView.component';
 
 @NgModule({
-  declarations: [
-      AppComponent,
-      ProductListView
-  ],
-  imports: [
-      BrowserModule,
-      HttpClientModule
-  ],
-    providers: [
-    Store
+    declarations: [
+        AppComponent,
+        ProductListView,
+        CartView
     ],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        HttpClientModule
+    ],
+    providers: [
+        Store
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
